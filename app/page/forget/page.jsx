@@ -6,7 +6,7 @@ import { auth } from "../../firebase"; // adjust the path to your firebase.js
 import Link from "next/link";
 
 export default function ForgotPasswordPage() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");

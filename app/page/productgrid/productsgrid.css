@@ -1,0 +1,86 @@
+/* Products Grid */
+.products-grid {
+  background-color: var(--bg-primary);
+  padding: 6rem 2rem;
+  color: var(--text-primary);
+}
+
+.grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.product-card {
+  background-color: var(--bg-card);
+  border-radius: 1.8rem;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.product-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.active-badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.product-description {
+  color: var(--text-secondary);
+  font-size: 1.12rem;
+  line-height: 1.7;
+  margin: 1.5rem 0;
+  flex-grow: 1;
+}
+
+.learn-more-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  color: var(--accent-red);
+  gap: 1rem;
+}
+
+.learn-more-btn:hover .arrow {
+  transform: translateX(6px);
+}
+

@@ -1,0 +1,92 @@
+
+/* Coming Soon Section */
+.coming-soon-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background-color: var(--bg-secondary);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-dark);
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 4.0rem;
+  font-weight: 550;
+  margin: 0 0 1.2rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.section-header p {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.preview-card {
+    
+    padding: 2.5rem;
+    width: 420px;
+    text-align: left;
+    transition: all 0.4s ease;
+    
+}
+
+.preview-card:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-10px);
+}
+
+.tool-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.soon-badge {
+  background-color: var(--accent-red);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.tool-description {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 2rem 0;
+}
+
+.notify-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-muted);
+  border: none;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notify-btn:hover {
+  background-color: var(--accent-red);
+  color: white;
+  transform: translateY(-3px);
+}

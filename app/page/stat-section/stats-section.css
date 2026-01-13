@@ -1,0 +1,74 @@
+/* Stats Section */
+.stats-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 6rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--bg-card);
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  min-width: 260px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.stat-icon {
+  font-size: 2.2rem;
+  background-color: var(--accent-red);
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+}
+
+.stat-content h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.stat-content p {
+  color: var(--text-secondary);
+  margin: 0.4rem 0 0;
+  font-size: 1.1rem;
+}
+
+.section-title h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

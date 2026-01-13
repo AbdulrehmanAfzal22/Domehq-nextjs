@@ -1,0 +1,135 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-navbar);
+  padding: 1rem 2rem;
+  font-family: 'Arial', sans-serif;
+  height: 60px;
+  z-index: 11232;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 80px;
+  height: 45px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: rgb(185, 67, 67);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+  color: var(--accent-red);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.get-started-btn {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: var(--accent-red-dark);
+}
+
+
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-globe {
+  font-size: 1.4rem;
+  margin-left: 15px;
+  color: var(--text-color);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  min-width: 140px;
+  z-index: 1000;
+  margin-top: 8px;
+}
+
+.lang-dropdown button {
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.lang-dropdown button:hover {
+  background: var(--accent-color);
+  color: white;
+}

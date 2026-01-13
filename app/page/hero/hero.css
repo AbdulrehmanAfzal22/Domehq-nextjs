@@ -1,0 +1,115 @@
+  .hero {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.hero-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo1 {
+  height: 80px;
+  filter: brightness(1.2);
+  margin-top: 50px;
+}
+
+.tagline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+}
+
+.sparkle {
+  font-size: 1.2rem;
+}
+
+.headline {
+  font-size: 50px;
+  font-weight: 100;
+  margin: 0;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.highlight {
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.red-text {
+  color: var(--accent-red);
+  font-weight: 1000;
+  font-size: 35px;
+}
+
+.subtext {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 3rem;
+  max-width: 600px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red-hover);
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1.3rem;
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--text-primary);
+  border: 2px solid var(--btn-secondary-border);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-border);
+}

@@ -1,66 +1,65 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";  // Add this to enable client-side state
 
-export default function Home() {
+import { useState, useEffect } from "react";  // Add imports for state and effect
+import Navbar from "./page/navbar/Navbar";
+import Hero from "./page/hero/hero";
+import ProductsGrid from "./page/productgrid/productsgrid";
+import ComingSoon from "./page/comingsoon/comingsoon";
+import Swiftstart from "./page/swiftstart/swiftstart";
+import Footer from "./page/footer/footer";
+import About from "./page/about/about";
+import "./theme.css";
+import Journey from "./page/journey1/page";
+import Login from "./page/login/page";
+
+export default function Page() {
+  const [currentTheme, setCurrentTheme] = useState("dark");  // Default to dark
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    setCurrentTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  // Apply theme to the document on change
+  useEffect(() => {
+    if (currentTheme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }, [currentTheme]);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />  {/* Pass props */}
+
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <section id="products">
+        <ProductsGrid />
+      </section>
+
+      <section id="coming">
+        <ComingSoon />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="swift">
+        <Swiftstart />
+      </section>
+
+      <section id="footer">
+        <Footer />
+      </section>
+
+      {/* <section id="login" style={{display:none}}>
+        <Login />
+      </section> */}
+    </>
   );
 }

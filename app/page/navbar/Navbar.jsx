@@ -37,28 +37,32 @@ export default function Navbar({ toggleTheme, currentTheme }) {
 
       <ul className="navbar-menu">
 
-    <li>
-          <a href="#services" onClick={(e) => handleSectionClick(e, "hero")}>
+        <li>
+          <a href="/#services" onClick={(e) => handleSectionClick(e, "hero")}>
            Home
           </a>
         </li>
         <li>
-          <a href="#products" onClick={(e) => handleSectionClick(e, "products")}>
+          <a href="/products" onClick={(e) => {
+             e.preventDefault();
+             handleSectionClick(e, "products");
+             window.history.pushState(null, "", "/products");
+          }}>
             Products
           </a>
         </li>
         <li>
-          <a href="#coming-soon" onClick={(e) => handleSectionClick(e, "coming")}>
+          <a href="/#coming-soon" onClick={(e) => handleSectionClick(e, "coming")}>
             Coming Soon
           </a>
         </li>
         <li>
-          <a href="#services" onClick={(e) => handleSectionClick(e, "swift")}>
+          <a href="/#services" onClick={(e) => handleSectionClick(e, "swift")}>
             Services
           </a>
         </li>
         <li>
-          <a href="#about" onClick={(e) => handleSectionClick(e, "about")}>
+          <a href="/#about" onClick={(e) => handleSectionClick(e, "about")}>
             About Us
           </a>
         </li>

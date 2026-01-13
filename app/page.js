@@ -9,9 +9,8 @@ import Swiftstart from "./page/swiftstart/swiftstart";
 import Footer from "./page/footer/footer";
 import About from "./page/about/about";
 import "./theme.css";
-import Journey from "./page/journey1/page";
 import Login from "./page/login/page";
-
+import RegisterPage from "./page/register/page";
 export default function Page() {
   const [currentTheme, setCurrentTheme] = useState("dark");  // Default to dark
 
@@ -31,7 +30,7 @@ export default function Page() {
 
   return (
     <>
-      <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />  {/* Pass props */}
+      <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />  
 
       <section id="hero">
         <Hero />
@@ -45,21 +44,24 @@ export default function Page() {
         <ComingSoon />
       </section>
 
+ <section id="swift">
+        <Swiftstart />
+      </section>
+
       <section id="about">
         <About />
       </section>
 
-      <section id="swift">
-        <Swiftstart />
-      </section>
+     
 
       <section id="footer">
         <Footer />
-      </section>
+      </section> 
 
       {/* <section id="login" style={{display:none}}>
         <Login />
-      </section> */}
+      </section>
+{/* <RegisterPage /> */}
     </>
   );
 }

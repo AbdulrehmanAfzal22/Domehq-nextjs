@@ -30,7 +30,7 @@ export default function Hero() {
           AI tools to launch, grow, and scale your vision.
         </p>
         <div className="buttons">
-          <button className="btn-primary">
+          <button className="btn-primary1">
             Start now with SwiftStart <span className="arrow">→</span>
           </button>
           <button className="btn-secondary">

@@ -1,17 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
-import "../login/auth.css";
-
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Link from "next/link";
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase"; // make sure path is correct
+import { useRouter } from "next/navigation";
+import "../login/auth.css";
 
-
-export default function LoginPage() {
+export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,62 +18,46 @@ export default function LoginPage() {
 
   const router = useRouter();
 
-  // Map Firebase error codes to your custom messages
+  // Map Firebase error codes to friendly messages
   const getErrorMessage = (code) => {
     switch (code) {
-      case "auth/user-not-found":
-        return "No account found with this email.";
-      case "auth/wrong-password":
-        return "Incorrect password. Try again!";
+      case "auth/email-already-in-use":
+        return "This email is already registered. Please login instead.";
       case "auth/invalid-email":
-        return "Please enter a valid email.";
-      case "auth/popup-closed-by-user":
-        return "Google login was canceled.";
-      case "auth/popup-blocked":
-        return "Popup blocked. Please allow popups for this site.";
+        return "Please enter a valid email address.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters long.";
       default:
         return "Something went wrong. Please try again.";
     }
   };
 
-  // Email/Password Login
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     setLoading(true);
     setError("");
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      router.push("/"); // redirect to main page
+      await createUserWithEmailAndPassword(auth, email, password);
+     
+      router.push("/page/login");
     } catch (err) {
-      setError(getErrorMessage(err.code));
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Google Login
-  const handleGoogleLogin = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      router.push("/"); // redirect to main page
-    } catch (err) {
-      setError(getErrorMessage(err.code));
+      console.error(err);
+      setError(getErrorMessage(err.code)); 
     } finally {
       setLoading(false);
     }
   };
 
   return (
+     
     <div className="login-container">
       <div className="login-card">
-
-        <h2 className="title">Sign In</h2>
-          <button className="close-btn" onClick={() => router.push("/")} aria-label="Close">
-            ×
-          </button>
-        <p className="subtitle">Sign in to access your account and chat history</p>
+        <h2 className="title">Create Account</h2>
+        
+        <Link href="/page/login">
+          <p className="subtitle">
+            Create a new account to save your chats and preferences
+          </p>
+        </Link>
 
         <div className="input-group">
           <label className="label">Email</label>
@@ -91,7 +73,9 @@ export default function LoginPage() {
         <div className="input-group">
           <div className="password-row">
             <label className="label">Password</label>
-          <Link className="forget" href="/page/forget">Forget password</Link>
+            <Link className="forgot" href="#">
+              Forgot password?
+            </Link>
           </div>
 
           <div className="password-wrapper">
@@ -111,34 +95,23 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Display custom error */}
+        {/* Custom error */}
         {error && <p style={{ color: "red", marginTop: "5px" }}>{error}</p>}
 
         <button
           className="btn-primary"
-          onClick={handleLogin}
+          onClick={handleRegister}
           disabled={loading}
         >
-          {loading ? "Signing in..." : "Sign In"}
-        </button>
-
-        <div className="divider">
-          <span>OR CONTINUE WITH</span>
-        </div>
-
-        <button
-          className="btn-google"
-          onClick={handleGoogleLogin}
-          disabled={loading}
-        >
-          <FaGoogle /> Google
+          {loading ? "Creating..." : "Create Account"}
         </button>
 
         <p className="create-text">
-          Don’t have an account?{" "}
-          <Link className="create-link" href="/page/register">Create an account</Link>
+          Already have an account?{" "}
+          <Link className="create-link" href="/page/login">
+            Sign In
+          </Link>
         </p>
-
       </div>
     </div>
   );

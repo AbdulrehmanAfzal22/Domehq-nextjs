@@ -73,11 +73,11 @@
   justify-content: center;
 }
 
-.btn-primary {
+.btn-primary1 {
   background-color: var(--accent-red);
   color: white;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 20px;
@@ -86,9 +86,10 @@
   align-items: center;
   gap: 0.8rem;
   transition: all 0.3s ease;
+  
 }
 
-.btn-primary:hover {
+.btn-primary1:hover {
   background-color: var(--accent-red-hover);
   transform: translateY(-2px);
 }

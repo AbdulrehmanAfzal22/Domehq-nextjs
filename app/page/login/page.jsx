@@ -8,7 +8,7 @@ import "../login/auth.css";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Link from "next/link";
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../firebase";
+import { useAuth } from "../firebase/AuthContext"; 
 
 
 export default function LoginPage() {
@@ -37,35 +37,33 @@ export default function LoginPage() {
         return "Something went wrong. Please try again.";
     }
   };
+const { loginWithEmail, loginWithGoogle } = useAuth();
 
-  // Email/Password Login
-  const handleLogin = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      router.push("/"); // redirect to main page
-    } catch (err) {
-      setError(getErrorMessage(err.code));
-    } finally {
-      setLoading(false);
-    }
-  };
+const handleLogin = async () => {
+  setLoading(true);
+  setError("");
+  try {
+    await loginWithEmail(email, password); // now uses context
+    router.push("/");
+  } catch (err) {
+    setError(getErrorMessage(err.code));
+  } finally {
+    setLoading(false);
+  }
+};
 
-  // Google Login
-  const handleGoogleLogin = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      router.push("/"); // redirect to main page
-    } catch (err) {
-      setError(getErrorMessage(err.code));
-    } finally {
-      setLoading(false);
-    }
-  };
+const handleGoogleLogin = async () => {
+  setLoading(true);
+  setError("");
+  try {
+    await loginWithGoogle(); // now uses context
+    router.push("/");
+  } catch (err) {
+    setError(getErrorMessage(err.code));
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="login-container">

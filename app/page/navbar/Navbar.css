@@ -212,3 +212,58 @@
     font-size: 1rem;
   }
 }
+
+
+/* Hide mobile button on desktop */
+.mobile-get-started {
+  display: none;
+}
+
+/* Desktop right side hides when hamburger open on mobile */
+.hide-on-mobile {
+  display: flex; /* default desktop display */
+}
+
+@media (max-width: 768px) {
+  .navbar-right {
+    display: none; /* hide desktop right side on mobile */
+  }
+
+  .mobile-get-started {
+    display: block; /* show button inside hamburger menu */
+    margin-top: 1rem;
+  }
+
+  .navbar-menu .get-started-btn {
+    width: 90%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .navbar-menu .get-started-btn:hover {
+    background-color: var(--accent-red-dark);
+    transform: translateY(-2px);
+  }
+
+  /* Hamburger menu style */
+  .navbar-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-navbar);
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+    display: none;
+    border-bottom: 1px solid var(--border);
+    z-index: 999;
+  }
+
+  .navbar-menu.menu-open {
+    display: flex;
+  }
+}

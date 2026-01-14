@@ -267,3 +267,68 @@
     display: flex;
   }
 }
+
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: var(--bg-navbar);
+  padding: 10px;
+  border-radius: 8px;
+  width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.profile-menu p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.profile-menu button {
+  width: 100%;
+  border: none;
+  background: var(--accent-red);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* Mobile profile inside hamburger */
+.mobile-profile {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .mobile-profile {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .mobile-profile .profile-img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .mobile-profile .profile-menu {
+    position: relative;
+    top: 10px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -126,13 +126,21 @@ export default function LoginPage() {
           <span>OR CONTINUE WITH</span>
         </div>
 
-        <button
-          className="btn-google"
-          onClick={handleGoogleLogin}
-          disabled={loading}
-        >
-          <FaGoogle /> Google
-        </button>
+  
+
+<button 
+  className="btn-google"
+  onClick={handleGoogleLogin}
+  disabled={loading}
+>
+  <svg width="20" height="20" viewBox="0 0 256 262" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#4285F4" d="M255.68 133.45c0-10.72-.96-20.92-2.72-30.68H130.56v58.16h70.16c-3.04 16.48-12.16 30.4-25.92 39.84v33.12h41.92c24.48-22.56 39.04-55.84 39.04-100.44z"/>
+    <path fill="#34A853" d="M130.56 261.31c35.2 0 64.8-11.68 86.4-31.84l-41.92-33.12c-11.52 7.76-26.24 12.48-44.48 12.48-34.24 0-63.36-23.12-73.76-54.16H13.12v34.08c21.28 42.72 65.12 72.56 117.44 72.56z"/>
+    <path fill="#FBBC05" d="M56.8 154.67c-4.8-14.24-4.8-29.6 0-43.84V76.75H13.12c-18.72 36.8-18.72 80.32 0 117.12L56.8 154.67z"/>
+    <path fill="#EA4335" d="M130.56 50.11c18.72 0 35.52 6.4 48.64 18.88l36.48-36.48C195.36 10.59 165.76 0 130.56 0 78.24 0 34.4 29.84 13.12 72.56l43.68 34.08c10.4-31.04 39.52-54.16 73.76-54.16z"/>
+  </svg>
+  Continue with Google
+</button>
 
         <p className="create-text">
           Don’t have an account?{" "}

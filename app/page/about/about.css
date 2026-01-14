@@ -163,7 +163,7 @@ color: #FF0000;
 }
 
 /* CTA Section */
-.cta-section {
+/* .cta-section {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   padding: 6rem 2rem;
@@ -182,4 +182,164 @@ color: #FF0000;
   font-size: 1.0rem;
   color: var(--text-secondary);
   line-height: 1.7;
+} */
+
+
+
+/* =============== About Section =============== */
+.about-us-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 8rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.tagline1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--accent-red);
+  margin-bottom: 2rem;
+}
+
+.intro-text,
+.main-description,
+.closing-text {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title { font-size: 2.2rem; }
+  .tagline1 { font-size: 1.8rem; }
+  .intro-text,
+  .main-description,
+  .closing-text { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .section-title { font-size: 1.8rem; }
+  .tagline1 { font-size: 1.4rem; }
+}
+
+
+/* =============== Mission & Vision Section =============== */
+.mission-vision-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 6rem 2rem;
+}
+
+.cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: .3s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-red);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.card-secondary {
+  color: var(--text-secondary);
+  font-size: .95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-title { font-size: 1.5rem; }
+  .card-description,
+  .card-secondary { font-size: .9rem; }
+}
+
+
+/* =============== CTA Section =============== */
+.cta-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.cta-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.cta-button {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-red-hover);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-title { font-size: 2rem; }
+  .cta-subtitle { font-size: .95rem; }
+}
+
+@media (max-width: 480px) {
+  .cta-title { font-size: 1.6rem; }
+  .cta-button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
 }

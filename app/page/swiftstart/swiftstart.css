@@ -205,3 +205,144 @@
 .explore-btn {
   color: var(--text-primary);
 }
+
+
+/* ========== Tablet (≤ 992px) ========== */
+@media (max-width: 992px) {
+  .service-title {
+    font-size: 2.4rem;
+  }
+
+  .service-description {
+    font-size: 1.15rem;
+    max-width: 600px;
+  }
+
+  .features-grid {
+    gap: 2rem 2.5rem;
+  }
+
+  .feature-item {
+    font-size: 1.05rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+  }
+
+  .software-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+}
+
+
+/* ========== Mobile (≤ 768px) ========== */
+@media (max-width: 768px) {
+  .swiftstart-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .swiftstart-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .service-title {
+    font-size: 2rem;
+  }
+
+  .service-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    text-align: left;
+  }
+
+  .feature-item {
+    font-size: 1rem;
+    align-items: flex-start;
+  }
+
+  .cta-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .software-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .software-card {
+    padding: 2rem;
+  }
+
+  .software-title {
+    font-size: 1.5rem;
+  }
+
+  .software-description {
+    font-size: 0.95rem;
+  }
+
+  .explore-btn {
+    font-size: 1rem;
+  }
+}
+
+
+/* ========== Small Mobile (≤ 480px) ========== */
+@media (max-width: 480px) {
+  .service-title {
+    font-size: 1.6rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+
+  .red-dot {
+    font-size: 1.4rem;
+  }
+
+  .feature-item {
+    font-size: 0.9rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .software-title {
+    font-size: 1.3rem;
+  }
+
+  .software-description {
+    font-size: 0.85rem;
+  }
+}

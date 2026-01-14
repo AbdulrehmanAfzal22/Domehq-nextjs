@@ -90,3 +90,43 @@
   color: white;
   transform: translateY(-3px);
 }
+
+
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.preview-card {
+  flex: 1 1 300px;
+  max-width: 420px;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 3rem;
+  }
+  .section-header p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-badge, .soon-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .notify-btn {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-section {
+    padding: 4rem 1rem;
+  }
+}

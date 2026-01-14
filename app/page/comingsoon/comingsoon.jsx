@@ -14,18 +14,18 @@ export default function Comingsoon() {
         <p>Innovative solutions launching soon</p>
       </div>
 
-      <div className="preview-grid">
-        <div className="preview-card">
-          <div className="card-header">
-            <h3 className="tool-title">NicheIT</h3>
-            <span className="soon-badge">Soon</span>
-          </div>
-          <p className="tool-description">
-            Discover profitable niches with AI-powered market analysis and trend prediction
-          </p>
-          <button className="notify-btn">Notify Me</button>
-        </div>
-      </div>
+  <div className="preview-grid">
+  <div className="preview-card">
+    <div className="card-header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <h3 className="tool-title">NicheIT</h3>
+      <span className="soon-badge">Soon</span>
+    </div>
+    <p className="tool-description">
+      Discover profitable niches with AI-powered market analysis and trend prediction
+    </p>
+    <button className="notify-btn">Notify Me</button>
+  </div>
+</div>
     </section>
       
     </>

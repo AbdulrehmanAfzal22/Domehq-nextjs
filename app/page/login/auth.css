@@ -243,6 +243,7 @@
   opacity: 0.95;
   color: white;
   background-color: red;
+
 }
 
 .divider span {
@@ -274,4 +275,99 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .login-card {
+    width: 420px;
+    padding: 28px;
+  }
+  .close-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Small screens (large phones) */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .btn-primary, .btn-google {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .close-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* Extra small screens (small phones) */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-card {
+    width: 100%;
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .forgot {
+    font-size: 10px !important;
+  }
+
+  .divider {
+    font-size: 10px;
+  }
+
+  .btn-google svg {
+    width: 18px;
+    height: 18px;
+  }
 }

@@ -1,0 +1,262 @@
+/* =========================
+   BASE SECTION
+========================= */
+
+.pricing-section {
+  background: #0f0f1a;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #a0a0c0;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   PLANS CONTAINER
+========================= */
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden; /* NO SCROLL */
+}
+
+/* =========================
+   PLAN CARD
+========================= */
+
+.plan-card {
+  background: #1a1a2e;
+  border-radius: 14px;
+  padding: 22px 18px;
+  width: 260px; /* reduced size */
+  position: relative;
+  border: 1px solid #333355;
+  transition: all 0.25s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   VARIANTS
+========================= */
+
+.popular {
+  border: 2px solid #9f7aea;
+  background: linear-gradient(145deg, #1e1e3a, #252545);
+}
+
+.founder {
+  border: 2px solid #4ade80;
+  background: linear-gradient(145deg, #1a2e1f, #1e3a22);
+  overflow: hidden;
+}
+
+/* =========================
+   RIBBON
+========================= */
+
+.ribbon {
+  position: absolute;
+  top: 12px;
+  right: -42px;
+  background: #4ade80;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 55px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   HEADER / BADGES
+========================= */
+
+.plan-header {
+  margin-bottom: 14px;
+  min-height: 32px;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.blue {
+  background: #3b82f6;
+}
+
+.purple {
+  background: #9f7aea;
+}
+
+.crown {
+  background: #fbbf24;
+  color: #000;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.plan-price {
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.old-price {
+  font-size: 1.15rem;
+  text-decoration: line-through;
+  color: #8888aa;
+  margin-right: 8px;
+}
+
+.period {
+  color: #a0a0c0;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h3 {
+  font-size: 1.35rem;
+  margin: 8px 0 10px;
+}
+
+.description {
+  color: #b0b0d0;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  min-height: 42px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.features li {
+  margin-bottom: 6px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-free {
+  background: #334155;
+  color: white;
+  margin-top: 28px;
+}
+
+.btn-free:hover {
+  background: #475569;
+}
+
+.btn-basic {
+  background: #22c55e;
+  color: white;
+  margin-top: 45px;
+}
+
+.btn-basic:hover {
+  background: #16a34a;
+}
+
+.btn-creator {
+  background: #a855f7;
+  color: white;
+}
+
+.btn-creator:hover {
+  background: #9333ea;
+}
+
+.btn-founder {
+  background: #4ade80;
+  color: #000;
+  font-weight: 700;
+}
+
+.btn-founder:hover {
+  background: #22c55e;
+}
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.bottom-note {
+  margin-top: 45px;
+}
+
+.btn.big {
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  width: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .plans-container {
+    flex-wrap: wrap;
+  }
+
+  .plan-card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 680px) {
+  .plan-card {
+    width: 100%;
+  }
+}

@@ -1,11 +1,24 @@
 "use client";
 
-import React from 'react';
-import './PricingPlans.css';
-
+import React from "react"
+import { useRouter } from "next/navigation";
+import "./PricingPlans.css";
+import Navbar from "../navbar/pricingnav/page";
 const PricingPlans = () => {
-  return (
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back(); 
+  };
+
+  return (<>
+<Navbar/>
     <div className="pricing-section">
+      
+      <button className="back-btn" onClick={handleBack}>
+        ← Back
+      </button>
+
       <h2>Choose Your Plan</h2>
       <p className="subtitle">
         From casual chats to power users — pick what fits your conversation needs.
@@ -105,6 +118,7 @@ const PricingPlans = () => {
         <p>No credit card required for free plan.</p>
       </div>
     </div>
+    </>
   );
 };
 

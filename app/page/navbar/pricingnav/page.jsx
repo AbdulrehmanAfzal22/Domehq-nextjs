@@ -1,0 +1,105 @@
+"use client";
+
+import "../Navbar";
+import Image from "../../../../public/assets/logo.png";
+import { FaMoon, FaSun, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
+import ImageComponent from "next/image";
+import { useAuth } from "../../firebase/AuthContext";
+import Pic from "../../../../public/assets/profile.png"; 
+
+export default function Navbar({ toggleTheme, currentTheme }) {
+  const router = useRouter();
+  const { user, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [profileMenu, setProfileMenu] = useState(false);
+  const [globeMenu, setGlobeMenu] = useState(false);
+
+  const handleLogout = async () => {
+    await logout();
+    setProfileMenu(false);
+  };
+
+  return (
+    <nav className="navbar">
+      
+      <div className="navbar-left">
+        <div className="logo" onClick={() => router.push("/")}>
+          <ImageComponent src={Image} alt="logo" width={40} height={40} />
+          <span className="logo-text">DOME</span>
+        </div>
+      </div>
+
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <ul className={`navbar-menu ${menuOpen ? "menu-open" : ""}`}>
+      
+ 
+        {/* Mobile only - Get Started button when logged out */}
+        {!user && (
+          <li className="mobile-get-started mobile-only">
+            <button className="get-started-btn" onClick={() => router.push("/page/login")}>Get Started</button>
+          </li>
+        )}
+
+        {user && (
+          <>
+            <li className="mobile-pricing mobile-only">
+              <button className="pricing-btn" onClick={() => router.push("../pricing/PricingPlans")}>Pricing</button>
+            </li>
+            <li className="mobile-profile mobile-only">
+              <div className="profile-wrapper">
+                <img
+                  src={Pic.src}
+                  alt="profile"
+                  className="profile-img"
+                  onClick={() => setProfileMenu(!profileMenu)}
+                />
+                {profileMenu && (
+                  <div className="profile-menu">
+                    <p>{user.email}</p>
+                    <button onClick={handleLogout}>Sign Out</button>
+                  </div>
+                )}
+              </div>
+            </li>
+          </>
+        )}
+      </ul>
+
+      <div className={`navbar-right ${menuOpen ? "hide-on-mobile" : ""}`}>
+
+     
+
+       
+        
+
+        {user && (
+          <>
+            
+            <div className="profile-wrapper">
+              <img
+                src={Pic.src}
+                alt="profile"
+                className="profile-img"
+                onClick={() => setProfileMenu(!profileMenu)}
+              />
+
+              {profileMenu && (
+                <div className="profile-menu">
+                  <p>{user.email}</p>
+                  <button onClick={handleLogout}>Sign Out</button>
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+      </div>
+    </nav>
+  );
+}

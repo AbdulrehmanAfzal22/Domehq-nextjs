@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";  // Add imports for state and effect
 import Navbar from "./page/navbar/Navbar";
-import Hero from "./page/hero/hero";
+import Hero from "./page/hero/page";
 import ProductsGrid from "./page/productgrid/productsgrid";
 import ComingSoon from "./page/comingsoon/comingsoon";
 import Swiftstart from "./page/swiftstart/swiftstart";
@@ -11,7 +11,7 @@ import About from "./page/about/about";
 import "./theme.css";
 import Login from "./page/login/page";
 import RegisterPage from "./page/register/page";
-import PricingPlans from "./page/pricing/PricingPlans";
+import PricingPlans from "./page/pricing/page";
 
 
 export default function Page() {
@@ -33,7 +33,7 @@ export default function Page() {
 
   return (
     <>
-      {/* <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />  
+   <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />  
 
       <section id="hero">
         <Hero />
@@ -59,17 +59,9 @@ export default function Page() {
 
       <section id="footer">
         <Footer />
-      </section>  */}
-
-      {/* <section id="login" style={{display:none}}>
-        <Login />
-      </section>
-{/* <RegisterPage /> */}
-
+      </section>  
     
-      <section id="pricing">
-        <PricingPlans />
-      </section>
+     
 
 
     </>

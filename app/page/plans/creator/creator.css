@@ -1,0 +1,103 @@
+/* CreatorPlan.css */
+.creator-plan-container {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.creator-plan-card {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.creator-plan-header {
+  background: linear-gradient(135deg, #367bbc, #3f96be);
+  padding: 18px 20px 12px;
+  text-align: center;
+}
+
+.creator-plan-title {
+  color: white;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.creator-plan-description {
+  background: #0d0d0d;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  border-bottom: 1px solid #222222;
+}
+
+.creator-plan-form {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.creator-form-group label {
+  color: #cccccc;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.creator-form-group input {
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 7px;
+  padding: 9px 12px;
+  color: white;
+  font-size: 0.94rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.creator-form-group input:focus {
+  border-color: #2ea2cc;
+  box-shadow: 0 0 0 2.5px rgba(46, 204, 113, 0.18);
+}
+
+.creator-form-group input::placeholder {
+  color: #666666;
+}
+
+.creator-subscribe-button {
+  background: #39a2cf;
+  color: black;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s ease;
+}
+
+.creator-subscribe-button:hover {
+  background: #2b8bab;
+  transform: translateY(-1px);
+}
+
+.creator-subscribe-button:active {
+  transform: translateY(0);
+}

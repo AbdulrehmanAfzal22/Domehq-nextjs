@@ -306,10 +306,17 @@
   border-radius: 6px;
   cursor: pointer;
 }
-/* Mobile profile inside hamburger */
-.mobile-profile {
-  display: none; /* hidden on desktop */
+
+.mobile-only {
+  display: none;
 }
+.pricing-btn{
+  color: white;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+}
+
 
 @media (max-width: 768px) {
   .mobile-profile {
@@ -331,4 +338,16 @@
     width: 100%;
     text-align: center;
   }
+   .mobile-only {
+    display: block;
+  }
+  .pricing-btn{
+    font-size: 18px;
+    color: white;
+    background-color: red;
+    padding: 6px;
+    border-radius: 6px;
+
+  }
 }
+

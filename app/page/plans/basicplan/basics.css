@@ -1,0 +1,118 @@
+/* SubscriptionPlan.css - Compact version */
+
+.plan-container {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.plan-card {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.plan-header {
+  background: linear-gradient(135deg, #0f3d2f, #1a5c45);
+  padding: 18px 20px 12px;
+  text-align: center;
+}
+
+.plan-icon {
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+}
+
+.plan-title {
+  color: white;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.plan-description {
+  background: #0d0d0d;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  border-bottom: 1px solid #222222;
+}
+
+.plan-form {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group input {
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 7px;
+  padding: 9px 12px;
+  color: white;
+  font-size: 0.94rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 2.5px rgba(46, 204, 113, 0.18);
+}
+
+.form-group input::placeholder {
+  color: #666666;
+}
+
+.pay-button {
+  background: #2ecc71;
+  color: black;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s ease;
+}
+
+.pay-button:hover {
+  background: #27ae60;
+  transform: translateY(-1px);
+}
+
+.pay-button:active {
+  transform: translateY(0);
+}
+
+/* Optional: even more compact variant (uncomment if needed) */
+/*
+.plan-form {
+  padding: 14px 18px;
+  gap: 8px;
+}
+
+.form-group input {
+  padding: 8px 12px;
+  font-size: 0.92rem;
+  height: 34px;
+}
+
+.pay-button {
+  padding: 9px;
+  font-size: 0.96rem;
+  height: 38px;
+  margin-top: 2px;
+}
+*/

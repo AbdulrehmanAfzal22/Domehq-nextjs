@@ -1,4 +1,4 @@
-/* FounderPlan.css */
+
 .founder-plan-container { min-height: 100vh; background: #0a0a0a; display: flex; justify-content: center; align-items: center; padding: 20px; font-family: system-ui, sans-serif; }
 .founder-plan-card { background: #111; border: 1px solid #333; border-radius: 14px; max-width: 360px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.55); }
 .founder-plan-header { background: linear-gradient(135deg, #2c1a00, #3d2600); border-bottom: 2px solid #f59e0b; padding: 18px 20px 12px; text-align: center; }
@@ -10,5 +10,23 @@
 .founder-form-group input { background: #1a1a1a; border: 1px solid #444; border-radius: 7px; padding: 9px 12px; color: white; font-size: 0.94rem; outline: none; transition: all 0.2s; }
 .founder-form-group input:focus { border-color: #f59e0b; box-shadow: 0 0 0 2.5px rgba(245,158,11,0.20); }
 .founder-form-group input::placeholder { color: #666; }
-.founder-pay-button { background: #f59e0b; color: black; font-size: 0.98rem; font-weight: 600; padding: 11px; border: none; border-radius: 8px; cursor: pointer; margin-top: 4px; transition: all 0.2s; }
+.founder-pay-button { background: #f59e0b; color: rgb(255, 255, 255); font-size: 0.98rem; font-weight: 600; padding: 11px; border: none; border-radius: 8px; cursor: pointer; margin-top: 4px; transition: all 0.2s; }
 .founder-pay-button:hover { background: #d97706; transform: translateY(-1px); }
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.6;
+}

@@ -22,6 +22,10 @@ export default function Navbar({ toggleTheme, currentTheme }) {
     setProfileMenu(false);
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <nav className="navbar">
       
@@ -37,9 +41,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
       </div>
 
       <ul className={`navbar-menu ${menuOpen ? "menu-open" : ""}`}>
-      
- 
-        {/* Mobile only - Get Started button when logged out */}
         {!user && (
           <li className="mobile-get-started mobile-only">
             <button className="get-started-btn" onClick={() => router.push("/page/login")}>Get Started</button>
@@ -72,15 +73,13 @@ export default function Navbar({ toggleTheme, currentTheme }) {
       </ul>
 
       <div className={`navbar-right ${menuOpen ? "hide-on-mobile" : ""}`}>
-
-     
-
-       
-        
-
         {user && (
           <>
-            
+            {/* ⭐ Back Button Added Here */}
+            <button className="back-btn" onClick={handleBack}>
+              ← Back
+            </button>
+
             <div className="profile-wrapper">
               <img
                 src={Pic.src}
@@ -88,7 +87,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
                 className="profile-img"
                 onClick={() => setProfileMenu(!profileMenu)}
               />
-
               {profileMenu && (
                 <div className="profile-menu">
                   <p>{user.email}</p>
@@ -98,7 +96,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
             </div>
           </>
         )}
-
       </div>
     </nav>
   );

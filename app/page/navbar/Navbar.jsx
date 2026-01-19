@@ -106,6 +106,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
 
         {user && (
           <>
+          
             <button className="pricing-btn" onClick={() => router.push("/page/pricing")}>
               Pricing
             </button>

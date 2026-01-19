@@ -318,6 +318,21 @@
 }
 
 
+.back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+
 @media (max-width: 768px) {
   .mobile-profile {
     display: block;

@@ -1,8 +1,4 @@
-/* =========================
-   BASE SECTION
-========================= */
-
-.pricing-section {
+.pricing-wrapper {
   background: #000000;
   color: white;
   padding: 60px 20px;
@@ -10,33 +6,28 @@
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-h2 {
+.pricing-title {
   font-size: 2.4rem;
   margin-bottom: 10px;
 }
 
-.subtitle {
+.pricing-subtitle {
   color: #a0a0c0;
   font-size: 1rem;
   margin-bottom: 40px;
 }
 
-
-.plans-container {
+.plans-grid {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  flex-wrap: wrap;
   gap: 16px;
   max-width: 1400px;
   margin: 0 auto;
-  overflow: hidden; 
 }
 
-/* =========================
-   PLAN CARD
-========================= */
-
-.plan-card {
+/* Plan Card */
+.plan {
   background: #1a1a2e;
   border-radius: 14px;
   padding: 22px 18px;
@@ -46,31 +37,22 @@ h2 {
   transition: all 0.25s ease;
 }
 
-/* .plan-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
-} */
-
-
-
-.popular {
+/* Popular & Founder Special Cards */
+.popular-plan {
   border: 2px solid #9f7aea;
   background: linear-gradient(145deg, #1e1e3a, #252545);
 }
 
-.founder {
+.founder-plan {
   border: 2px solid #4ade80;
   background: linear-gradient(145deg, #1a2e1f, #1e3a22);
   overflow: hidden;
 }
 
-/* =========================
-   RIBBON
-========================= */
-
+/* Ribbon */
 .ribbon {
   position: absolute;
-  top: 12px;
+  top: 33px;
   right: -42px;
   background: #4ade80;
   color: #000;
@@ -78,14 +60,11 @@ h2 {
   font-size: 0.75rem;
   padding: 4px 55px;
   transform: rotate(45deg);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* =========================
-   HEADER / BADGES
-========================= */
-
-.plan-header {
+/* Header / Badges */
+.plan-header1 {
   margin-bottom: 14px;
   min-height: 32px;
 }
@@ -97,28 +76,25 @@ h2 {
   font-weight: 600;
 }
 
-.blue {
+.blue-badge {
   background: #3b82f6;
 }
 
-.purple {
+.purple-badge {
   background: #9f7aea;
 }
 
-.crown {
+.crown-badge {
   background: #fbbf24;
   color: #000;
 }
 
-/* =========================
-   PRICE
-========================= */
-
-.plan-price {
+/* Price */
+.plan-price-section {
   margin-bottom: 6px;
 }
 
-.price {
+.plan-price {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -130,32 +106,33 @@ h2 {
   margin-right: 8px;
 }
 
-.period {
+.plan-period {
   color: #a0a0c0;
   font-size: 0.9rem;
 }
 
-/* =========================
-   TEXT
-========================= */
-
-h3 {
+/* Text */
+.plan-name {
   font-size: 1.35rem;
   margin: 8px 0 10px;
 }
 
-.description {
+.plan-description1 {
+  color: #b0b0d0;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  min-height: 42px;
+}
+.plan-description2{
+  margin-top: 1px;
   color: #b0b0d0;
   font-size: 0.9rem;
   margin-bottom: 18px;
   min-height: 42px;
 }
 
-/* =========================
-   FEATURES
-========================= */
-
-.features {
+/* Features */
+.plan-features {
   list-style: none;
   padding: 0;
   margin: 0 0 24px 0;
@@ -164,15 +141,15 @@ h3 {
   line-height: 1.8;
 }
 
-.features li {
+.plan-features li {
   margin-bottom: 6px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
+/* Buttons */
+.btn-plan-free,
+.btn-plan-basic,
+.btn-plan-creator,
+.btn-plan-founder {
   width: 100%;
   padding: 12px;
   border: none;
@@ -181,44 +158,46 @@ h3 {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.btn-free {
-  background: #334155;
-  color: white;
   margin-top: 28px;
 }
 
-.btn-free:hover {
+.btn-plan-free {
+    color: #fff;
+    background: #334155;
+    width: 223px;
+margin-top: 44px;
+}
+
+
+.btn-plan-free:hover {
   background: #475569;
 }
 
-.btn-basic {
+.btn-plan-basic {
   background: #22c55e;
   color: white;
-  margin-top: 45px;
+margin-top: 65px;
 }
-
-.btn-basic:hover {
+.btn-plan-basic:hover {
   background: #16a34a;
 }
 
-.btn-creator {
+.btn-plan-creator {
   background: #a855f7;
   color: white;
 }
 
-.btn-creator:hover {
+.btn-plan-creator:hover {
   background: #9333ea;
 }
 
-.btn-founder {
+.btn-plan-founder {
   background: #4ade80;
-  color: #000;
+  color: #ffffff;
   font-weight: 700;
 }
 
-.btn-founder:hover {
+.btn-plan-founder:hover {
   background: #22c55e;
 }
 
@@ -232,7 +211,7 @@ h3 {
   width: auto;
 }
 
-.back-btn {
+.btn-back {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -244,25 +223,25 @@ h3 {
   color: #ffffff;
   transition: 0.2s;
 }
-.back-btn:hover {
-background-color: transparent;
+
+.btn-back:hover {
+  background-color: transparent;
 }
 
 
+
 @media (max-width: 1100px) {
-  .plans-container {
+  .plans-grid {
     flex-wrap: wrap;
   }
 
-  .plan-card {
+  .plan {
     width: 48%;
   }
 }
 
 @media (max-width: 680px) {
-  .plan-card {
+  .plan {
     width: 100%;
   }
 }
-
-

@@ -80,9 +80,9 @@
   color: #666666;
 }
 
-.creator-subscribe-button {
+.creator-subscribe-button1 {
   background: #39a2cf;
-  color: black;
+  color: rgb(250, 245, 245);
   font-size: 0.98rem;
   font-weight: 600;
   padding: 11px;
@@ -93,11 +93,28 @@
   transition: all 0.2s ease;
 }
 
-.creator-subscribe-button:hover {
+.creator-subscribe-button1:hover {
   background: #2b8bab;
   transform: translateY(-1px);
 }
 
 .creator-subscribe-button:active {
   transform: translateY(0);
+}
+.close-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.6;
 }

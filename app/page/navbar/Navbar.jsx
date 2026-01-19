@@ -54,7 +54,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
         {user && (
           <>
             <li className="mobile-pricing mobile-only">
-              <button className="pricing-btn" onClick={() => router.push("../pricing/PricingPlans")}>Pricing</button>
+              <button className="pricing-btn" onClick={() => router.push("/page/pricing")}>Pricing</button>
             </li>
             <li className="mobile-profile mobile-only">
               <div className="profile-wrapper">

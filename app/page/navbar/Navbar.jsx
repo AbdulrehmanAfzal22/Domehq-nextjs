@@ -42,7 +42,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
         <li><a href="#swift">Services</a></li>
         <li><a href="#about">About Us</a></li>
    
-          {user && user.email === "abdulrehmanafzal60@gmail.com" && (
+          {user && user.email === "musa@gmail.com" && (
                  <li><a href="/page/Inquiries">Quiries</a></li>
           )}
         {!user && (

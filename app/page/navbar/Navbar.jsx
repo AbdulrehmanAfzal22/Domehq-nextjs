@@ -41,8 +41,10 @@ export default function Navbar({ toggleTheme, currentTheme }) {
         <li><a href="#coming">Coming Soon</a></li>
         <li><a href="#swift">Services</a></li>
         <li><a href="#about">About Us</a></li>
- 
-        {/* Mobile only - Get Started button when logged out */}
+   
+          {user && user.email === "abdulrehmanafzal60@gmail.com" && (
+                 <li><a href="/page/Inquiries">Quiries</a></li>
+          )}
         {!user && (
           <li className="mobile-get-started mobile-only">
             <button className="get-started-btn" onClick={() => router.push("/page/login")}>Get Started</button>
@@ -88,7 +90,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
             onMouseLeave={() => setGlobeMenu(false)}
           >
             <FaGlobe />
-
             {globeMenu && (
               <div className="globe-menu">
                 <button>English</button>
@@ -96,6 +97,9 @@ export default function Navbar({ toggleTheme, currentTheme }) {
               </div>
             )}
           </div>
+
+       
+
         </div>
 
         {!user && (
@@ -106,7 +110,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
 
         {user && (
           <>
-          
             <button className="pricing-btn" onClick={() => router.push("/page/pricing")}>
               Pricing
             </button>
@@ -117,7 +120,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
                 className="profile-img"
                 onClick={() => setProfileMenu(!profileMenu)}
               />
-
               {profileMenu && (
                 <div className="profile-menu">
                   <p>{user.email}</p>

@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyC9I7B8Y8ufi2v-4X9KPEHzgZl2VjWVJ6M",
   authDomain: "domehq-nextjs.firebaseapp.com",
@@ -12,4 +14,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
+
 export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+
+

@@ -33,9 +33,11 @@ export default function Hero() {
           <button className="btn-primary1">
             Start now with SwiftStart <span className="arrow">→</span>
           </button>
+            <a href="/page/contact">
           <button className="btn-secondary">
             Contact Us
-          </button>
+          </button></a>
+
         </div>
       </div>
     </section>

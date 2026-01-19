@@ -130,3 +130,25 @@
 .submit-btn:active {
   transform: scale(0.97);
 }
+
+
+.custom-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 999;
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+

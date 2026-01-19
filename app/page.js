@@ -13,7 +13,7 @@ import Login from "./page/login/page";
 import RegisterPage from "./page/register/page";
 import PricingPlans from "./page/pricing/page";
 
-import InquiryForm from "./page/contact/contact";
+import InquiryForm from "./page/contact/page";
 
 export default function Page() {
   const [currentTheme, setCurrentTheme] = useState("dark");  // Default to dark
@@ -63,7 +63,7 @@ export default function Page() {
       </section>  
     
      
-<InquiryForm/>
+{/* <InquiryForm/> */}
 
     </>
   );

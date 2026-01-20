@@ -83,7 +83,6 @@ export default function Navbar({ toggleTheme, currentTheme }) {
             {currentTheme === "dark" ? <FaMoon /> : <FaSun />}
           </span>
 
-          {/* 🌐 GLOBE DROPDOWN */}
           <div
             className="globe-wrapper"
             onMouseEnter={() => setGlobeMenu(true)}

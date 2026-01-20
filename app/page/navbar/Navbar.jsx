@@ -28,7 +28,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
       <div className="navbar-left">
         <div className="logo" onClick={() => router.push("/")}>
           <ImageComponent src={Image} alt="logo" width={40} height={40} />
-          <span className="logo-text">DOME</span>
+          <span >DOME</span>
         </div>
       </div>
 
@@ -53,6 +53,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
 
         {user && (
           <>
+          
             <li className="mobile-pricing mobile-only">
               <button className="pricing-btn" onClick={() => router.push("../pricing/PricingPlans")}>Pricing</button>
             </li>
@@ -82,23 +83,13 @@ export default function Navbar({ toggleTheme, currentTheme }) {
           <span onClick={toggleTheme}>
             {currentTheme === "dark" ? <FaMoon /> : <FaSun />}
           </span>
-
-          {/* 🌐 GLOBE DROPDOWN */}
-          <div
-            className="globe-wrapper"
-            onMouseEnter={() => setGlobeMenu(true)}
-            onMouseLeave={() => setGlobeMenu(false)}
-          >
-            <FaGlobe />
-            {globeMenu && (
-              <div className="globe-menu">
-                <button>English</button>
-                <button>Arabic</button>
-              </div>
-            )}
-          </div>
-
-       
+          <div className="globe-wrapper">
+  <FaGlobe className="globe-icon" />
+  <div className="globe-menu dropdown-menu">
+    <button>English</button>
+    <button>Arabic</button>
+  </div>
+</div>
 
         </div>
 

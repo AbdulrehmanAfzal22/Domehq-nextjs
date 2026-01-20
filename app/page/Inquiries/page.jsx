@@ -31,7 +31,18 @@ export default function Inquiries() {
     fetchInquiries();
   }, []);
 
-  if (loading) return <p>Loading inquiries...</p>;
+  // 🔹 Full Screen Loading UI
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-box">
+          <div className="spinner"></div>
+          <h3>Your inquiries are loading...</h3>
+          <p>Please wait a moment.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="inquiries-page">
@@ -53,7 +64,12 @@ export default function Inquiries() {
               <p><strong>Phone:</strong> {inq.phone}</p>
               <p><strong>Job Type:</strong> {inq.jobType}</p>
               <p><strong>Message:</strong> {inq.message}</p>
-              <p><strong>Submitted:</strong> {inq.createdAt?.toDate ? inq.createdAt.toDate().toLocaleString() : "—"}</p>
+              <p>
+                <strong>Submitted:</strong>{" "}
+                {inq.createdAt?.toDate
+                  ? inq.createdAt.toDate().toLocaleString()
+                  : "—"}
+              </p>
             </div>
           ))
         )}

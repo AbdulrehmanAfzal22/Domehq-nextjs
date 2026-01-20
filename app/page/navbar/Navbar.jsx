@@ -54,7 +54,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
         {user && (
           <>
             <li className="mobile-pricing mobile-only">
-              <button className="pricing-btn" onClick={() => router.push("/page/pricing")}>Pricing</button>
+              <button className="pricing-btn" onClick={() => router.push("../pricing/PricingPlans")}>Pricing</button>
             </li>
             <li className="mobile-profile mobile-only">
               <div className="profile-wrapper">
@@ -83,6 +83,7 @@ export default function Navbar({ toggleTheme, currentTheme }) {
             {currentTheme === "dark" ? <FaMoon /> : <FaSun />}
           </span>
 
+          {/* 🌐 GLOBE DROPDOWN */}
           <div
             className="globe-wrapper"
             onMouseEnter={() => setGlobeMenu(true)}

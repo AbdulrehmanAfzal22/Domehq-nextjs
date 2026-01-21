@@ -5,8 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { auth } from "../../firebase";
 import { applyActionCode, checkActionCode } from "firebase/auth";
 import "./verify.css";
+  import { Suspense } from "react";
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [status, setStatus] = useState("checking"); // checking, success, error, waiting
@@ -244,5 +245,13 @@ export default function VerifyEmailPage() {
         }
       `}</style>
     </div>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={<div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#f5f5f5" }}><p>Loading...</p></div>}>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }

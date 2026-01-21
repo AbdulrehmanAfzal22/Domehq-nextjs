@@ -69,12 +69,11 @@ export default function RegisterPage() {
         email: email,
         registrationMethod: "email",
         createdAt: new Date().toISOString(),
-        emailVerified: false, // Set as false, user needs to verify
+        emailVerified: false, 
       });
 
-      // Inform user to verify email before proceeding
       setSuccess("Account created successfully! Please verify your email.");
-      setTimeout(() => router.push("/page/verify"), 1500); // Redirect to a 'verify email' page
+      setTimeout(() => router.push("/page/verify"), 1000); 
     } catch (err) {
       console.error("Registration error:", err);
       if (err.code === "auth/email-already-in-use") {
@@ -89,7 +88,6 @@ export default function RegisterPage() {
     }
   };
 
-  // PHONE REGISTRATION - Generate and show OTP
   const sendOtp = async () => {
     setError("");
     setSuccess("");
@@ -115,7 +113,6 @@ export default function RegisterPage() {
     }, 1000);
   };
 
-  // VERIFY OTP and create account
   const verifyOtpAndRegister = async () => {
     setLoading(true);
     setError("");
@@ -132,25 +129,21 @@ export default function RegisterPage() {
     }
 
     try {
-      // Create a cleaner dummy email for phone users
-      // Format: phone_923001234567@domehq.app
+     
       const cleanPhone = phone.replace(/\+/g, "").replace(/\s/g, "");
       const dummyEmail = `phone_${cleanPhone}@domehq.app`;
       const dummyPassword = `${phone}${otp}SecurePass!`;
 
       const userCredential = await createUserWithEmailAndPassword(auth, dummyEmail, dummyPassword);
       
-      // Update display name to show phone number
       await updateProfile(userCredential.user, {
         displayName: phone,
       });
 
-      // Store actual phone number in Firestore
       await setDoc(doc(db, "users", userCredential.user.uid), {
         phoneNumber: phone,
         registrationMethod: "phone",
         createdAt: new Date().toISOString(),
-        // Store the dummy email too for reference
         authEmail: dummyEmail,
       });
 
@@ -181,7 +174,6 @@ export default function RegisterPage() {
         <h2 className="title">Create Account</h2>
         <p className="subtitle">Demo: OTP shown on screen</p>
 
-        {/* Toggle */}
         <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
           <button
             onClick={() => {
@@ -229,7 +221,6 @@ export default function RegisterPage() {
           </button>
         </div>
 
-        {/* EMAIL FORM */}
         {registrationMethod === "email" && (
           <>
             <div className="input-group">
@@ -278,7 +269,6 @@ export default function RegisterPage() {
           </>
         )}
 
-        {/* PHONE FORM */}
         {registrationMethod === "phone" && (
           <>
             {step === 1 && (
@@ -324,7 +314,6 @@ export default function RegisterPage() {
                   Sent to: {phone}
                 </p>
                 
-                {/* Display the generated OTP */}
                 <div
                   style={{
                     background: "#d4edda",
@@ -413,7 +402,6 @@ export default function RegisterPage() {
           </>
         )}
 
-        {/* Messages */}
         {error && (
           <div
             style={{

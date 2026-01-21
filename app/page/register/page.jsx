@@ -4,10 +4,7 @@ import { useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import "../login/auth.css";
@@ -64,15 +61,20 @@ export default function RegisterPage() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       
-      // Store user data in Firestore
+      // Send email verification
+      await sendEmailVerification(userCredential.user);
+
+      // Store user data in Firestore with 'emailVerified: false' initially
       await setDoc(doc(db, "users", userCredential.user.uid), {
         email: email,
         registrationMethod: "email",
         createdAt: new Date().toISOString(),
+        emailVerified: false, // Set as false, user needs to verify
       });
 
-      setSuccess("Account created successfully! Redirecting...");
-      setTimeout(() => router.push("/"), 1500);
+      // Inform user to verify email before proceeding
+      setSuccess("Account created successfully! Please verify your email.");
+      setTimeout(() => router.push("/page/verify"), 1500); // Redirect to a 'verify email' page
     } catch (err) {
       console.error("Registration error:", err);
       if (err.code === "auth/email-already-in-use") {
@@ -426,7 +428,7 @@ export default function RegisterPage() {
             {error}
           </div>
         )}
-        {success && (
+        {/* {success && (
           <div
             style={{
               color: "#155724",
@@ -439,7 +441,7 @@ export default function RegisterPage() {
           >
             {success}
           </div>
-        )}
+        )} */}
 
         <p className="create-text" style={{ marginTop: "20px" }}>
           Already have an account?{" "}

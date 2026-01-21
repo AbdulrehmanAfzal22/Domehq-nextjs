@@ -1,0 +1,52 @@
+/* Black Background and Red Accent Styling */
+.verify-email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Black Background */
+}
+
+.verify-email-card {
+  background-color: #222; /* Dark Grey background for card */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  color: #e50914; /* Red color for title */
+  margin-bottom: 20px;
+}
+
+.message-container {
+  font-size: 16px;
+  color: #fff; /* White text color */
+  margin-top: 20px;
+}
+
+.loading-text {
+  color: #e50914; /* Red color for loading text */
+  font-size: 18px;
+}
+
+.message-container p {
+  color: #fff; /* White color for message */
+}
+
+.message-container p a {
+  color: #e50914; /* Red color for links */
+  text-decoration: underline;
+}
+
+.message-container p {
+  margin-top: 10px;
+}
+.login11{
+    color: white;
+    font-weight: 800;
+}

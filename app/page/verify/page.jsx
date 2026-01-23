@@ -40,7 +40,7 @@ function VerifyEmailContent() {
       
       // Step 4: Redirect to login after 2 seconds
       setTimeout(() => {
-        router.push("/page/login");
+        router.push("/");
       }, 2000);
       
     } catch (error) {
@@ -75,7 +75,8 @@ function VerifyEmailContent() {
         setMessage("Please check your inbox and click the verification link.");
       }
     } else {
-      // No user logged in, redirect to login
+     
+      
       setStatus("waiting");
       setMessage("Please login to continue.");
       setTimeout(() => {

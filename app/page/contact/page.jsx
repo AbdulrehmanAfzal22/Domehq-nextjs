@@ -1,20 +1,26 @@
 "use client";
-
-import React, { useState } from "react";
-import "./contact.css";
+import React, { useState, useEffect, use } from "react";
+import { useAuth } from "../firebase/AuthContext";
 import { useRouter } from "next/navigation";
 import { db } from "../../firebase"; 
 import { collection, addDoc } from "firebase/firestore";
+import "./contact.css";
 
 const InquiryForm = ({ onClose }) => {
   const router = useRouter();
+  const { user } = useAuth(); 
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); 
   const [jobType, setJobType] = useState("");
   const [message, setMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false); // for custom popup
+  const [showPopup, setShowPopup] = useState(false); 
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email); 
+    }
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,24 +35,23 @@ const InquiryForm = ({ onClose }) => {
         createdAt: new Date(),
       });
 
-      // Clear form
+      
       setName("");
       setPhone("");
-      setEmail("");
       setJobType("");
       setMessage("");
 
-      // Show custom popup
+      
       setShowPopup(true);
 
-      // Hide popup after 3 seconds
+     
       setTimeout(() => {
         setShowPopup(false);
       }, 3000);
 
     } catch (error) {
       console.error("Error saving inquiry:", error);
-      alert("Something went wrong!"); // you can also make custom popup for errors
+      alert("Something went wrong!"); 
     }
   };
 
@@ -80,7 +85,7 @@ const InquiryForm = ({ onClose }) => {
             placeholder="Email Address" 
             required 
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            readOnly 
           />
 
           <select 
@@ -108,7 +113,7 @@ const InquiryForm = ({ onClose }) => {
           </button>
         </form>
 
-        {/* Custom Popup */}
+     
         {showPopup && (
           <div className="custom-popup">
             Inquiry submitted successfully!

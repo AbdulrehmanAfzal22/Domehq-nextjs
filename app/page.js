@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";  // Add imports for state and effect
 import Navbar from "./page/navbar/Navbar";
 import Hero from "./page/hero/page";
-import ProductsGrid from "./page/productgrid/productsgrid";
+import ProductsGrid from "./page/productgrid/page";
 import ComingSoon from "./page/comingsoon/comingsoon";
 import Swiftstart from "./page/swiftstart/swiftstart";
 import Footer from "./page/footer/footer";

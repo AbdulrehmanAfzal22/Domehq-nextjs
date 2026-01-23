@@ -1,44 +1,109 @@
+/* General Styling */
 .inquiries-page {
   padding: 20px;
   max-width: 1100px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #fff; /* Light text */
+  border-radius: 10px;
 }
 
+/* Title */
 .inquiries-page h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #f5f5f5; /* Lighter color for heading */
 }
 
+/* Back Button */
 .back-btn1 {
   background-color: #cf0000;
   color: white;
   border: none;
-  padding: 8px 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .back-btn1:hover {
   background-color: #f01b1b;
 }
 
+/* Filters Container */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #1d1d1d; /* Dark background */
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Dropdown and Search Input Styling */
+.filters select,
+.filters input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #444; /* Darker border */
+  outline: none;
+  transition: all 0.3s ease;
+  width: 48%;
+  background-color: #2c2c2c; /* Dark input fields */
+  color: #fff; /* Light text in inputs */
+}
+
+/* Focus Effect for Search Box and Dropdown */
+.filters select:focus,
+.filters input:focus {
+  border-color: #cf0000;
+  box-shadow: 0px 0px 8px rgba(207, 0, 0, 0.3);
+  background-color: #444; /* Lighter background on focus */
+}
+
+/* Dropdown Specific Styles */
+.filters select {
+  background-color: #2c2c2c; /* Dark select dropdown */
+  color: #fff;
+  border: 1px solid #444; /* Dark border */
+}
+
+/* Search Box Styling */
+.filters input {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+/* Cards Container */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 15px;
+  margin-top: 20px;
 }
 
+/* Inquiry Cards */
 .inquiry-card {
-  background: #fff;
-  border-left: 4px solid #cf0000;
+  background: #1f1f1f; /* Dark background for cards */
+  color: #fff;
   padding: 15px;
-  border-radius: 8px;
-  color: #000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 300px;
+  border: 1px solid #333; /* Dark border for cards */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Soft shadow */
+  transition: all 0.3s ease;
+}
+
+/* Inquiry Card Hover Effect */
+.inquiry-card:hover {
+  background-color: #333; /* Slightly lighter on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow */
 }
 
 .inquiry-card p {
@@ -47,7 +112,217 @@
 }
 
 .inquiry-card strong {
+  color: #cf0000; /* Red color for labels */
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #000000; /* Dark background */
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+}
+
+.loading-box {
+  padding: 30px 40px;
+  border-radius: 12px;
+  background: #111;
+  border: 1px solid #cf0000;
+  box-shadow: 0 0 20px rgba(207, 0, 0, 0.4);
+}
+
+.spinner {
+  margin: 0 auto 20px;
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #cf0000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-box h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.loading-box p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 500px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters select,
+  .filters input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .inquiry-card {
+    padding: 12px;
+  }
+  .inquiry-card p {
+    font-size: 13px;
+  }
+}
+
+
+
+.inquiries-page {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #0e0d0d;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.inquiries-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+.back-btn1 {
+  background-color: #cf0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn1:hover {
+  background-color: #f01b1b;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #1d1d1d;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.filters select,
+.filters input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 48%;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.filters select:focus,
+.filters input:focus {
+  border-color: #cf0000;
+  box-shadow: 0px 0px 8px rgba(207, 0, 0, 0.3);
+  background-color: #444;
+}
+
+.filters select {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.filters input {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.filters .search-bar input {
+    width: 194%;
+}
+
+
+.filters .month-filter select {
+    width: 100%;
+}
+
+.filters button {
+  background-color: #cf0000;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #f01b1b;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.inquiry-card {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.inquiry-card:hover {
+  background-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.inquiry-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.inquiry-card strong {
   color: #cf0000;
+}
+
+.inquiry-card .message-text {
+  max-height: 150px;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .loading-screen {
@@ -97,26 +372,16 @@
   opacity: 0.7;
 }
 
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 15px;
-  justify-content: center;
-}
-
-.inquiry-card {
-  background: #ffffff;
-  color: #000;
-  padding: 15px;
-  border-radius: 10px;
-  width: 300px;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-
-
 @media (max-width: 500px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters select,
+  .filters input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   .inquiry-card {
     padding: 12px;
   }
@@ -124,3 +389,4 @@
     font-size: 13px;
   }
 }
+

@@ -8,7 +8,10 @@ import "./Inquiries.css";
 
 export default function Inquiries() {
   const [inquiries, setInquiries] = useState([]);
+  const [filteredInquiries, setFilteredInquiries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedMonth, setSelectedMonth] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -21,6 +24,7 @@ export default function Inquiries() {
           ...doc.data(),
         }));
         setInquiries(data);
+        setFilteredInquiries(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching inquiries:", error);
@@ -31,7 +35,41 @@ export default function Inquiries() {
     fetchInquiries();
   }, []);
 
-  // 🔹 Full Screen Loading UI
+  // Apply filters whenever search query or selected month changes
+  useEffect(() => {
+    applyFilters();
+  }, [searchQuery, selectedMonth, inquiries]);
+
+  const applyFilters = () => {
+    let filtered = [...inquiries];
+
+    // Apply search filter
+    if (searchQuery.trim() !== "") {
+      const lowercasedQuery = searchQuery.toLowerCase();
+      filtered = filtered.filter((inq) => {
+        return (
+          inq.name?.toLowerCase().includes(lowercasedQuery) ||
+          inq.email?.toLowerCase().includes(lowercasedQuery) ||
+          inq.phone?.toLowerCase().includes(lowercasedQuery) ||
+          inq.jobType?.toLowerCase().includes(lowercasedQuery) ||
+          inq.message?.toLowerCase().includes(lowercasedQuery)
+        );
+      });
+    }
+
+    // Apply month filter
+    if (selectedMonth !== "") {
+      filtered = filtered.filter((inq) => {
+        if (!inq.createdAt?.toDate) return false;
+        const inquiryMonth = inq.createdAt.toDate().getMonth();
+        return inquiryMonth === parseInt(selectedMonth);
+      });
+    }
+
+    setFilteredInquiries(filtered);
+  };
+
+  // Full Screen Loading UI
   if (loading) {
     return (
       <div className="loading-screen">
@@ -52,11 +90,59 @@ export default function Inquiries() {
 
       <h2>All Inquiries</h2>
 
+      <div className="filters">
+        {/* Search Bar */}
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search inquiries..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
+        {/* Month Dropdown */}
+        <div className="month-filter">
+          <select
+            onChange={(e) => setSelectedMonth(e.target.value)}
+            value={selectedMonth}
+          >
+            <option value="">All Months</option>
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Results count */}
+      <p style={{ color: "#fff", marginBottom: "20px", fontSize: "14px" }}>
+        Showing {filteredInquiries.length} of {inquiries.length} inquiries
+        {searchQuery && ` matching "${searchQuery}"`}
+        {selectedMonth !== "" && ` in ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][parseInt(selectedMonth)]}`}
+      </p>
+
       <div className="cards-container">
-        {inquiries.length === 0 ? (
-          <p style={{ textAlign: "center", color: "#fff" }}>No inquiries yet</p>
+        {filteredInquiries.length === 0 ? (
+          <div style={{ textAlign: "center", color: "#fff", padding: "40px" }}>
+            <p style={{ fontSize: "18px", marginBottom: "10px" }}>No inquiries found</p>
+            <p style={{ fontSize: "14px", opacity: 0.8 }}>
+              {searchQuery || selectedMonth !== "" 
+                ? "Try adjusting your filters" 
+                : "No inquiries have been submitted yet"}
+            </p>
+          </div>
         ) : (
-          inquiries.map((inq, index) => (
+          filteredInquiries.map((inq, index) => (
             <div key={inq.id} className="inquiry-card">
               <p><strong>#:</strong> {index + 1}</p>
               <p><strong>Name:</strong> {inq.name}</p>
